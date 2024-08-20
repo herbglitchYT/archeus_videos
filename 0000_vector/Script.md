@@ -1,25 +1,25 @@
 # What I mean by a vector
-My definition of a vector is a expandable array. For math vectors we will use `vector2` and `vector3`. I'll be writing this in C, but the concepts should easily be transferred to any other language.
+My definition of a vector is a expandable array. For math vectors I use `vector2` and `vector3`. I'll be writing this in C, but the concepts should easily be transferred to any other language.
 
 # How does a vector work
 For the most basic implementation of a vector, and the implementation we will use, when we run out of space in an array, we will create a new array of double the size and copy the old arrays contents into the new array.
 We can use the same idea for downsizing the array.
 
 # Description stuff
-In the description I have included a repository that holds boilerplate for this project, the script I am reading, the finished project we will make, and all other related files.
-You might notice I am on linux, I have also tested this code on windows and had no issues with it. If you do have any issues, please let me know.
+In the description I have included a repository that holds, boilerplate for this project, the script I am reading, the finished project we will make, and all other related files.
+You might notice I am on linux, I have also tested this code on windows with msys2 using their ucrt MinGW and had no issues with it. If you do have any issues, please let me know.
 
 # ARC_Errno and ARC_Bool
 If you are watching this video when it comes out, I most likely won't have made a video for `ARC_Errno` and `ARC_Bool` yet. We will be using them both and they are part of the boilerplate. If you don't want to deal with the boilerplate, using a `printf` or whatever your language uses to output will work for what we use `ARC_Errno` for. And C has `stdbool.h`, which is pretty much all `ARC_Bool` is.
 
 # CMake
-Like with ARC_Errno and ARC_Bool, if you are watching this when the video releases, I will not have gone over setting up cmake for a library. So for this I'd recommend either making a normal `CMakeLists.txt` which I have a video on and is linked in the description, or using the `CMakeLists.txt` provided in the boilerplate. If you have seen the cmake library video, I would recommend using that `CMakeLists.txt` and adding this to a library
+Like with ARC_Errno and ARC_Bool, if you are watching when this video releases, I will not have gone over setting up cmake for a library. So for this I'd recommend either making a normal `CMakeLists.txt` which I have a video on and is linked in the description, or using the `CMakeLists.txt` provided in the boilerplate. If the cmake library video has come out, and you have seen it, I would recommend using that `CMakeLists.txt` and adding this to the library
 
 # Make
 If you don't like cmake, I have also included a "simple" boilerplate. Though if you use the simple boilerplate, do not include from "arc/std/", I'll let you know the changes when we get there.
 
 # Write the header boilerplate
-Headers to me are the best place for documentation. I try to document code as much as possible, though because this process takes a long time I'll speed up the footage of me writing the documentation.
+Headers to me are the best place for documentation. I try to document code as much as possible, though because this process takes a long time I'll speed up the footage of me writing the documentation when we get to it.
 
 I'll write out the boilerplate for those not using a boilerplate. Lets add the include guards, and to keep this from erroring if we want to use this in c++, we will add `extern "c"` if `__cplusplus` is defined and close that out.
 ```c
@@ -143,9 +143,9 @@ void *ARC_Vector_Get(ARC_Vector *vector, uint32_t index);
 ```
 
 # Write the Type
-now that we have a basic outline for what a vector will be lets create the ARC_Vect struct in the c
+now that we have a basic outline for what a vector will be lets create the ARC_Vector struct in the c file
 ```c
-struct ARC_Vect {
+struct ARC_Vector {
 
 }
 ```
@@ -172,7 +172,7 @@ struct ARC_Vector {
 
 # Write the default compareDataFn
 The callback `CompareDataFn` is used when removing an item from the vector. This is handy if the vector holds a matching item that is in a different pointer from the one we check.
-Though for our default `compareDataFunction` we can just check to see if the pointers are the same, as we don't have more information for what the void pointers hold.
+Though for our default `compareDataFunction` we can just check to see if the pointers are the same, as we don't have more information for what the void pointers holds.
 ```c
 //this is a private function used as the default check for removing data from a given pointer
 ARC_Bool ARC_Vector_CompareDataDefaultFn(void *dataA, void *dataB){
@@ -273,7 +273,7 @@ Next we can iterate from the given index to the end copying the next value back 
 
 Now we can decrease the `currentSize` by one.
 
-We should check to see if the current size is the same as half the capacity or if the capacity is one (there is no reason to have a capacity of zero), and if it is neither of those two things, we don't need to do anything else so we can return.
+We should check to see if the current size is not the same as half the capacity or if the capacity is one (there is no reason to have a capacity of zero), and if it is either of those two things, we don't need to do anything else so we can return.
 
 Now we can now safely half the capacity, so we'll bit shift right. Again, if you are uncomfortable bit shifting, feel free to do integer division by two. And we can `realloc` again to size down and copy the contents
 ```c
@@ -360,7 +360,8 @@ Lets open the `testing/std/vector.c` file and write some tests. I have never don
 
 We will be testing with 32 bit integers, and so we need to create a testing compare data function. All we have to do is de-reference the pointers as 32 bit ints, and check the values.
 
-for a bonus challenge, please try to think up some tests you could write. To test you define ARC_Test and give it a name that matches what you are testing like `AddATonOfThingsToVector` and add curly braces to the end.
+for a bonus challenge, please try to think up some tests you could write.
+To test you define ARC_Test and give it a name that matches what you are testing like `AddATonOfThingsToVector` and add curly braces to the end.
 then inside you can write code like normal, and to check output you can use `ARC_CHECK();` with a boolean expresson on the inside
 ```c
 ARC_TEST(AddATonOfThingsToVector){
@@ -371,7 +372,7 @@ ARC_TEST(AddATonOfThingsToVector){
 }
 ```
 
-I'd recommend pausing the video and trying the challenge now.
+I'd recommend pausing the video and trying the bonus challenge now.
 
 Alright, for the tests, first we can add remove by index and check that the vector is holding the correct values, I'll be using refrences instead of creating pointers just to keep things simple
 
@@ -518,7 +519,7 @@ ARC_TEST(AddAndCheckSizeInVector){
 }
 ```
 
-We now can run the tests, make sure everything works as it should, and run for those on linux and probably mac valgrind to see if we have any memory leaks, sadly for windows I don't know if there is a tool to check memory leaks[.
+We now can run the tests, make sure everything works as it should, and for those on linux and probably mac run valgrind to see if we have any memory leaks, sadly for windows I don't know if there is a tool to check memory leaks like valgrind.
 
 # Help and questions
 Thank you for watching this video, if you would like help or if there is something wrong with the video, please check the description for ways to contact me. youtube comments are not a good place to reach me.
