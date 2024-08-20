@@ -1,0 +1,2 @@
+all:
+	g++ -Wall -Werror -g -o tests src/*.c tests/*.c -DARC_DEBUG -DARC_DEBUG_LOG_STREAM_OVERRIDE

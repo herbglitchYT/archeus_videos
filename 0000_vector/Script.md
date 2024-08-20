@@ -158,7 +158,7 @@ void ARC_Vector_Add(ARC_Vector *vector, void *data){
         }
 
         //resize the vector's array and copy the contents at the same time
-        vector->data = (void *)realloc(vector->data, sizeof(void *) * vector->currentCapacity);
+        vector->data = (void **)realloc(vector->data, sizeof(void *) * vector->currentCapacity);
     }
 
     //add to the vectors array and increase its current size
@@ -206,7 +206,7 @@ void ARC_Vector_RemoveIndex(ARC_Vector *vector, uint32_t index){
 
     //half the capacity and copy it into a smaller array
     vector->currentCapacity >>= 1;
-    vector->data = (void *)realloc(vector->data, sizeof(void *) * vector->currentCapacity);
+    vector->data = (void **)realloc(vector->data, sizeof(void *) * vector->currentCapacity);
 }
 ```
 
