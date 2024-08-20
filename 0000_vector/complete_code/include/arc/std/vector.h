@@ -59,6 +59,7 @@ void ARC_Vector_Add(ARC_Vector *vector, void *data);
  * @brief removes an item from a matching item in an ARC_Vector
  *
  * @note this function uses the ARC_Vector_CompareDataFn that the ARC_Vector was created with
+ * @note this function will not throw an error if there is no match
  *
  * @param[in] vector ARC_Vector to remove from
  * @param[in] data   matching data to remove
