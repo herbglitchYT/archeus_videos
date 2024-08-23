@@ -1,0 +1,380 @@
+/* ~ main box ~ */
+[Action Press] 1:1 1:0
+
+//start at 0 with gg 0
+[Action Press] 34:1 34:0 34:1 34:0 11:1 11:0
+
+//line
+[Action Press] 36:1 36:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0
+
+//line down 13
+[Action Press] 42:1 36:1 36:0 42:0
+[Action Press] 42:1 36:1 36:0 42:0
+[Action Press] 42:1 36:1 36:0 42:0
+[Action Press] 42:1 36:1 36:0 42:0
+[Action Press] 42:1 36:1 36:0 42:0
+[Action Press] 42:1 36:1 36:0 42:0
+[Action Press] 42:1 36:1 36:0 42:0
+[Action Press] 42:1 36:1 36:0 42:0
+[Action Press] 42:1 36:1 36:0 42:0
+[Action Press] 42:1 36:1 36:0 42:0
+[Action Press] 42:1 36:1 36:0 42:0
+[Action Press] 42:1 36:1 36:0 42:0
+[Action Press] 42:1 36:1 36:0 42:0
+
+//start at 0 with gg 0
+[Action Press] 34:1 34:0 34:1 34:0 11:1 11:0
+
+//start multi line select
+[Action Press] 29:1 47:1 47:0 29:0
+
+//go down 14 times
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+
+//go right 44 times
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+
+//f to create box
+[Action Press] 33:1 33:0
+
+
+/* ~ The Problem ~ */
+//start at 0 with gg 0
+[Action Press] 34:1 34:0 34:1 34:0 11:1 11:0
+
+//go down 2 times
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+
+//go right 2 times
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+
+//write "The Problem" over
+[Action Press] 42:1 19:1 19:0 42:0
+[Action  Type] The Problem
+[Action Press] 1:1 1:0
+
+/* ~ First Array Box ~ */
+//go to start location
+[Action Press] 11:1 11:0 38:1 38:0 38:1 38:0 36:1 36:0 36:1 36:0
+
+//start multi line select
+[Action Press] 29:1 47:1 47:0 29:0
+
+//go down 5 times
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+
+//go right 9 times
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+
+//f to create box
+[Action Press] 33:1 33:0
+
+//go to first word start
+[Action Press] 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 37:1 37:0 37:1 37:0 37:1 37:0 37:1 37:0
+
+//write "Hat" over
+[Action Press] 42:1 19:1 19:0 42:0
+[Action  Type] Hat
+[Action Press] 1:1 1:0
+
+//go to next location
+[Action Press] 35:1 35:0 35:1 35:0 36:1 36:0
+
+//write "Pants" over
+[Action Press] 42:1 19:1 19:0 42:0
+[Action  Type] Pants
+[Action Press] 1:1 1:0
+
+//go to next location
+[Action Press] 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 36:1 36:0
+
+//write "Jacket" over
+[Action Press] 42:1 19:1 19:0 42:0
+[Action  Type] Jacket
+[Action Press] 1:1 1:0
+
+//go to next location
+[Action Press] 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 36:1 36:0
+
+//write "Shoes" over
+[Action Press] 42:1 19:1 19:0 42:0
+[Action  Type] Shoes
+[Action Press] 1:1 1:0
+
+//go to next location
+[Action Press] 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 36:1 36:0 36:1 36:0 36:1 36:0 36:1 36:0
+
+//write "Socks" over
+[Action Press] 42:1 19:1 19:0 42:0
+[Action  Type] Socks
+[Action Press] 1:1 1:0
+
+//go to next location
+[Action Press] 35:1 35:0 35:1 35:0 37:1 37:0
+
+//line up 1
+[Action Press] 42:1 37:1 37:0 42:0
+
+
+/* ~ A Fix With a Vector ~ */
+//go to next location
+[Action Press] 37:1 37:0 37:1 37:0 37:1 37:0 37:1 37:0 37:1 37:0 37:1 37:0 37:1 37:0 37:1 37:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0
+
+//write "A Fix With a Vector" over
+[Action Press] 42:1 19:1 19:0 42:0
+[Action  Type] A Fix With a Vector
+[Action Press] 1:1 1:0
+
+
+/* ~ Start Array ~ */
+//go to next location
+[Action Press] 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 36:1 36:0 36:1 36:0
+
+//start multi line select
+[Action Press] 29:1 47:1 47:0 29:0
+
+//go down 5 times
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+
+//go right 9 times
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+
+//f to create box
+[Action Press] 33:1 33:0
+
+//go to first word start
+[Action Press] 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 37:1 37:0 37:1 37:0 37:1 37:0 37:1 37:0
+
+//write "Hat" over
+[Action Press] 42:1 19:1 19:0 42:0
+[Action  Type] Hat
+[Action Press] 1:1 1:0
+
+//go to next location
+[Action Press] 35:1 35:0 35:1 35:0 36:1 36:0
+
+//write "Pants" over
+[Action Press] 42:1 19:1 19:0 42:0
+[Action  Type] Pants
+[Action Press] 1:1 1:0
+
+//go to next location
+[Action Press] 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 36:1 36:0
+
+//write "Jacket" over
+[Action Press] 42:1 19:1 19:0 42:0
+[Action  Type] Jacket
+[Action Press] 1:1 1:0
+
+//go to next location
+[Action Press] 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 36:1 36:0
+
+//write "Shoes" over
+[Action Press] 42:1 19:1 19:0 42:0
+[Action  Type] Shoes
+[Action Press] 1:1 1:0
+
+//go to next location
+[Action Press] 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 36:1 36:0 36:1 36:0
+
+//write "Socks" over
+[Action Press] 42:1 19:1 19:0 42:0
+[Action  Type] Socks
+[Action Press] 1:1 1:0
+
+//go to next location
+[Action Press] 37:1 37:0 37:1 37:0 37:1 37:0 37:1 37:0 37:1 37:0 37:1 37:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0
+
+
+/* ~ Resized Array Box  ~ */
+//start multi line select
+[Action Press] 29:1 47:1 47:0 29:0
+
+//go down 9 times
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+[Action Press] 36:1 36:0
+
+//go right 10 times
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+[Action Press] 38:1 38:0
+
+//f to create box
+[Action Press] 33:1 33:0
+
+
+/* ~ Connecting Lines ~ */
+//go to next location
+[Action Press] 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 37:1 37:0 37:1 37:0 37:1 37:0 37:1 37:0 37:1 37:0 37:1 37:0 37:1 37:0 37:1 37:0
+
+//line right 4
+[Action Press] 42:1 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 42:0
+
+//go to next location
+[Action Press] 38:1 38:0 38:1 38:0 38:1 38:0
+
+//write "Hat" over
+[Action Press] 42:1 19:1 19:0 42:0
+[Action  Type] Hat
+[Action Press] 1:1 1:0
+
+//go to next location
+[Action Press] 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 36:1 36:0
+
+//line right 4
+[Action Press] 42:1 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 42:0
+
+//go to next location
+[Action Press] 38:1 38:0 38:1 38:0 38:1 38:0
+
+//write "Pants" over
+[Action Press] 42:1 19:1 19:0 42:0
+[Action  Type] Pants
+[Action Press] 1:1 1:0
+
+//go to next location
+[Action Press] 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 36:1 36:0
+
+//line right 4
+[Action Press] 42:1 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 42:0
+
+//go to next location
+[Action Press] 38:1 38:0 38:1 38:0 38:1 38:0
+
+//write "Jacket" over
+[Action Press] 42:1 19:1 19:0 42:0
+[Action  Type] Jacket
+[Action Press] 1:1 1:0
+
+//go to next location
+[Action Press] 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 36:1 36:0
+
+//line right 4
+[Action Press] 42:1 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 42:0
+
+//go to next location
+[Action Press] 38:1 38:0 38:1 38:0 38:1 38:0
+
+//write "Shoes" over
+[Action Press] 42:1 19:1 19:0 42:0
+[Action  Type] Shoes
+[Action Press] 1:1 1:0
+
+//go to next location
+[Action Press] 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 36:1 36:0 36:1 36:0 35:1 35:0 35:1 35:0 35:1 35:0
+
+//line right 3
+[Action Press] 42:1 38:1 38:0 38:1 38:0 38:1 38:0 42:0
+
+//line up 1
+[Action Press] 42:1 37:1 37:0 42:0
+
+//line right 4
+[Action Press] 42:1 38:1 38:0 38:1 38:0 38:1 38:0 38:1 38:0 42:0
+
+//go to next location
+[Action Press] 38:1 38:0 38:1 38:0 38:1 38:0
+
+//write "Socks" over
+[Action Press] 42:1 19:1 19:0 42:0
+[Action  Type] Socks
+[Action Press] 1:1 1:0
+
+//go to next location
+[Action Press] 35:1 35:0 35:1 35:0 35:1 35:0 35:1 35:0 36:1 36:0
