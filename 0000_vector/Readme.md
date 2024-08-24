@@ -1,3 +1,6 @@
+# Release
+Zip folders of boilerplate_cmake, boilerplate_simple, complete_code, and controller_scripts can be found here [https://github.com/herbglitchYT/archeus_videos/releases/tag/video](https://github.com/herbglitchYT/archeus_videos/releases/tag/video)
+
 # Description
 This project is meant as a tool to help learn how to make a vector in c (or just the general concept of how a vector works).
 

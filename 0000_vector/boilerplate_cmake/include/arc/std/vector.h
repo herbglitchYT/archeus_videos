@@ -11,4 +11,4 @@ extern "C" {
 }
 #endif
 
-#endif //!ARC_STD_VECTOR_H_
+#endif // !ARC_STD_VECTOR_H_

@@ -15,4 +15,4 @@ typedef bool ARC_Bool;
 }
 #endif
 
-#endif //ARC_STD_BOOL_H_
+#endif // !ARC_STD_BOOL_H_

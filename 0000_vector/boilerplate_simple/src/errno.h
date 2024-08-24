@@ -25,8 +25,8 @@ extern int32_t arc_errno;
     #ifndef ARC_DEBUG_LOG_STREAM_OVERRIDE
         //this functin will be called on start, handy to set the log file to stdout if it is not overrided
         void __attribute__ ((constructor)) ARC_Errno_SetDefaultStream(void);
-    #endif
-#endif
+    #endif // !ARC_DEBUG_LOG_STREAM_OVERRIDE
+#endif // !ARC_DEBUG
 
 #ifdef __cplusplus
 }
@@ -38,6 +38,6 @@ extern int32_t arc_errno;
 #else
     #define ARC_DEBUG_LOG_ERROR(STR)
     #define ARC_DEBUG_LOG_ERROR_WITH_VARIABLES(STR, ...)
-#endif
+#endif // !ARC_DEBUG
 
-#endif //ARC_STD_ERRNO_H_
+#endif // !ARC_STD_ERRNO_H_

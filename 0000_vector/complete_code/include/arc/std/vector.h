@@ -101,4 +101,4 @@ void *ARC_Vector_Get(ARC_Vector *vector, uint32_t index);
 }
 #endif
 
-#endif //!ARC_STD_VECTOR_H_
+#endif // !ARC_STD_VECTOR_H_
