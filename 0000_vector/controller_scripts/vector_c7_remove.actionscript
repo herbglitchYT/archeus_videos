@@ -1,0 +1,25 @@
+[Action Press] 1:1 1:0 2:1 2:0 11:1 11:0 5:1 5:0 42:1 34:1 34:0 42:0 23:1 23:0
+[Action  Type] void ARC_Vector_Remove(ARC_Vector *vector, void *data){
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] //iterate through every item to check to see if it exists
+[Action Press] 29:1 28:1 28:0 29:0 14:1 14:0 14:1 14:0
+[Action  Type] for(uint32_t index = 0; index < vector->currentSize; index++){
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] //keep the code cleaner by pulling the current index data into a temp variable
+[Action Press] 29:1 28:1 28:0 29:0 14:1 14:0 14:1 14:0
+[Action  Type] void *dataB = vector->data[index];
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] //check if the data matches, and if so remove by index
+[Action Press] 29:1 28:1 28:0 29:0 14:1 14:0 14:1 14:0
+[Action  Type] if(vector->compareDataFn(data, dataB) == ARC_True){
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_RemoveIndex(vector, index);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] }
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] }
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] }
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0

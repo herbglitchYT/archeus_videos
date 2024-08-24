@@ -1,0 +1,33 @@
+[Action Press] 1:1 1:0 3:1 3:0 7:1 7:0 42:1 34:1 34:0 42:0 23:1 23:0
+[Action  Type] void ARC_Vector_Create(ARC_Vector **vector, ARC_Vector_CompareDataFn *compareDataFn){
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] //create the vector
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 14:1 14:0 14:1 14:0
+[Action  Type] *vector = (ARC_Vector *)malloc(sizeof(ARC_Vector));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] //initialize all the values stored in the vector
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 14:1 14:0 14:1 14:0
+[Action  Type] (*vector)->data            = (void **)malloc(sizeof(void *));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] (*vector)->currentCapacity = 1;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] (*vector)->currentSize     = 0;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] //set a default for compareDataFn, then override it if it is passed in through parameters
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 14:1 14:0 14:1 14:0
+[Action  Type] (*vector)->compareDataFn = ARC_Vector_CompareDataDefaultFn;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] if(compareDataFn != NULL){
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] (*vector)->compareDataFn = *compareDataFn;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] }
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] }
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0

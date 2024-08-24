@@ -1,0 +1,17 @@
+[Action Press] 1:1 1:0 34:1 34:0 34:1 34:0 11:1 11:0 23:1 23:0
+[Action  Type] #include "arc/std/vector.h"
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] #include "arc/std/bool.h"
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] #include "arc/std/errno.h"
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] #include <stdint.h>
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] #include <stdlib.h>
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] struct ARC_Vector {
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] };

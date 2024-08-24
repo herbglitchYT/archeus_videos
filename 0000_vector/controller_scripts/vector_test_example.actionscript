@@ -1,0 +1,23 @@
+[Action Press] 1:1 1:0 11:1 11:0 42:1 34:1 34:0 42:0 23:1 23:0
+[Action  Type] #include "../test.h"
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] #include "arc/std/bool.h"
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] #include "arc/std/errno.h"
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] #include "arc/std/vector.h"
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] #include <stdint.h>
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_TEST(AddATonOfThingsToVector){
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] int32_t coolVar = 69;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] int32_t chillVar = 420;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Test(coolVar != chillVar);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] }
+[Action Press] 29:1 28:1 28:0 29:0

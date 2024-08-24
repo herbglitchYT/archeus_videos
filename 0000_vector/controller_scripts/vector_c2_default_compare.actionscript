@@ -1,0 +1,20 @@
+[Action Press] 1:1 1:0 2:1 2:0 6:1 6:0 42:1 34:1 34:0 42:0
+[Action Press] 24:1 24:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] //this is a private function used as the default check for removing data from a given pointer
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 1:1 1:0 32:1 32:0 11:1 11:0 31:1 31:0
+[Action  Type] ARC_Bool ARC_Vector_CompareDataDefaultFn(void *dataA, void *dataB){
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] if(dataA == dataB){
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] return ARC_True;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] }
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] return ARC_False;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] }
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0

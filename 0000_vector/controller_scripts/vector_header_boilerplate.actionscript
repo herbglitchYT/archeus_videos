@@ -1,0 +1,22 @@
+[Action  Type] #ifndef ARC_STD_VECTOR_H_
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] #define ARC_STD_VECTOR_H_
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] #ifdef __cplusplus
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] extern "C" {
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] #endif
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] #ifdef __cplusplus
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] }
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] #endif
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] #endif // !ARC_STD_VECTOR_H_

@@ -1,0 +1,265 @@
+[Action Press] 1:1 1:0 47:1 47:0 8:1 8:0 42:1 34:1 34:0 42:0 11:1 11:0 31:1 31:0
+[Action  Type] ARC_Bool TEST_Vector_CompareDataFn(void *dataA, void *dataB){
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] if(*(int32_t *)dataA == *(int32_t *)dataB){
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] return ARC_True;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] }
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] return ARC_False;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] }
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+
+[Action  Type] ARC_TEST(Vector_Add_RemoveIndex_Get){
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector *vector;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Create(&vector, NULL);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] int32_t val0 = 0;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] int32_t val1 = 1;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] int32_t val2 = 2;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] int32_t val3 = 3;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] int32_t val4 = 4;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Add(vector, &val0);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Add(vector, &val1);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Add(vector, &val2);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Add(vector, &val3);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Add(vector, &val4);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(0 == *(int32_t *)ARC_Vector_Get(vector, 0));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(1 == *(int32_t *)ARC_Vector_Get(vector, 1));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(2 == *(int32_t *)ARC_Vector_Get(vector, 2));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(3 == *(int32_t *)ARC_Vector_Get(vector, 3));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(4 == *(int32_t *)ARC_Vector_Get(vector, 4));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_RemoveIndex(vector, 0);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(1 == *(int32_t *)ARC_Vector_Get(vector, 0));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(2 == *(int32_t *)ARC_Vector_Get(vector, 1));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(3 == *(int32_t *)ARC_Vector_Get(vector, 2));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(4 == *(int32_t *)ARC_Vector_Get(vector, 3));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_RemoveIndex(vector, 3);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(1 == *(int32_t *)ARC_Vector_Get(vector, 0));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(2 == *(int32_t *)ARC_Vector_Get(vector, 1));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(3 == *(int32_t *)ARC_Vector_Get(vector, 2));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_RemoveIndex(vector, 1);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(1 == *(int32_t *)ARC_Vector_Get(vector, 0));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(3 == *(int32_t *)ARC_Vector_Get(vector, 1));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_RemoveIndex(vector, 1);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(1 == *(int32_t *)ARC_Vector_Get(vector, 0));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_RemoveIndex(vector, 0);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Destroy(vector);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] }
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+
+[Action  Type] ARC_TEST(Vector_Add_Remove_Get){
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector *vector;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_CompareDataFn testCompareDataFn = TEST_Vector_CompareDataFn;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Create(&vector, &testCompareDataFn);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] int32_t val0 = 0;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] int32_t val1 = 1;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] int32_t val2 = 2;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] int32_t val3 = 3;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] int32_t val4 = 4;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Add(vector, &val0);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Add(vector, &val1);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Add(vector, &val2);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Add(vector, &val3);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Add(vector, &val4);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(0 == *(int32_t *)ARC_Vector_Get(vector, 0));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(1 == *(int32_t *)ARC_Vector_Get(vector, 1));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(2 == *(int32_t *)ARC_Vector_Get(vector, 2));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(3 == *(int32_t *)ARC_Vector_Get(vector, 3));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(4 == *(int32_t *)ARC_Vector_Get(vector, 4));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Remove(vector, &val0);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(1 == *(int32_t *)ARC_Vector_Get(vector, 0));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(2 == *(int32_t *)ARC_Vector_Get(vector, 1));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(3 == *(int32_t *)ARC_Vector_Get(vector, 2));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(4 == *(int32_t *)ARC_Vector_Get(vector, 3));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Remove(vector, &val4);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(1 == *(int32_t *)ARC_Vector_Get(vector, 0));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(2 == *(int32_t *)ARC_Vector_Get(vector, 1));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(3 == *(int32_t *)ARC_Vector_Get(vector, 2));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Remove(vector, &val2);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(1 == *(int32_t *)ARC_Vector_Get(vector, 0));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(3 == *(int32_t *)ARC_Vector_Get(vector, 1));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Remove(vector, &val1);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(3 == *(int32_t *)ARC_Vector_Get(vector, 0));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Remove(vector, &val3);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Destroy(vector);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] }
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+
+[Action  Type] ARC_TEST(Vector_Add_RemoveIndex_GetSize){
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector *vector;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Create(&vector, NULL);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] int32_t val0 = 0;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] int32_t val1 = 1;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] int32_t val2 = 2;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] int32_t val3 = 3;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] int32_t val4 = 4;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Add(vector, &val0);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Add(vector, &val1);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Add(vector, &val2);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Add(vector, &val3);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Add(vector, &val4);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(5 == ARC_Vector_GetSize(vector));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_RemoveIndex(vector, 0);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(4 == ARC_Vector_GetSize(vector));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_RemoveIndex(vector, 0);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(3 == ARC_Vector_GetSize(vector));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_RemoveIndex(vector, 0);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(2 == ARC_Vector_GetSize(vector));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_RemoveIndex(vector, 0);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(1 == ARC_Vector_GetSize(vector));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_RemoveIndex(vector, 0);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(0 == ARC_Vector_GetSize(vector));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Destroy(vector);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] }
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+
+[Action  Type] ARC_TEST(Vector_Add_RemoveIndex_Get_Try_Out_Of_Bounds){
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector *vector;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Create(&vector, NULL);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] int32_t val0 = 0;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Add(vector, &val0);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_CHECK(NULL == ARC_Vector_Get(vector, 1));
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] arc_errno = 0;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_RemoveIndex(vector, 0);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_Vector_Destroy(vector);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] }
+[Action Press] 29:1 28:1 28:0 29:0

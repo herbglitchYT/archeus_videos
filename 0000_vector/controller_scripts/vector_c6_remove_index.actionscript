@@ -1,0 +1,56 @@
+[Action Press] 1:1 1:0 8:1 8:0 8:1 8:0 42:1 34:1 34:0 42:0 23:1 23:0
+[Action  Type] void ARC_Vector_RemoveIndex(ARC_Vector *vector, uint32_t index){
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] //check to make sure the given index is in bounds of the vector
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 14:1 14:0 14:1 14:0
+[Action  Type] if(index >= vector->currentSize){
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] arc_errno = ARC_ERRNO_DATA;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] ARC_DEBUG_LOG_ERROR("ARC_Vector_Add(vector, data), vector at max capacity tried adding another value");
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] return;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] }
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] //we will be using index to iterate as we will not use it again, so we can skip the first part of the for loop
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 14:1 14:0 14:1 14:0
+[Action  Type] for(; index + 1 < vector->currentSize; index++){
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] //override the data from index to the end by shifting it back one
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 14:1 14:0 14:1 14:0
+[Action  Type] vector->data[index] = vector->data[index + 1];
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] }
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] //we have removed the item so we can decrease the current size
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 14:1 14:0 14:1 14:0
+[Action  Type] vector->currentSize--;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] //if the current size is half the current capacity or the current capacity is at the smallest limit, we do not need to do anything else
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 14:1 14:0 14:1 14:0
+[Action  Type] if(vector->currentSize != vector->currentCapacity >> 1 || vector->currentCapacity == 1){
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] return;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] }
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] //half the capacity and copy it into a smaller array
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 14:1 14:0 14:1 14:0
+[Action  Type] vector->currentCapacity >>= 1;
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] vector->data = (void **)realloc(vector->data, sizeof(void *) * vector->currentCapacity);
+[Action Press] 29:1 28:1 28:0 29:0
+[Action  Type] }
+[Action Press] 29:1 28:1 28:0 29:0
+[Action Press] 29:1 28:1 28:0 29:0
