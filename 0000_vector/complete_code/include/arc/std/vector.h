@@ -10,7 +10,7 @@ extern "C" {
 
 /**
  * @brief a dynamic array type
- */
+*/
 typedef struct ARC_Vector ARC_Vector;
 
 /**
@@ -32,7 +32,7 @@ typedef ARC_Bool (* ARC_Vector_CompareDataFn)(void *dataA, void *dataB);
  * @param[out] vector        ARC_Vector to initialize
  * @param[in]  compareDataFn a callback that checks if data stored in the array matches,
  *                           if set to NULL and ARC_Vector_Remove is called, the pointer addresses will be compared
- */
+*/
 void ARC_Vector_Create(ARC_Vector **vector, ARC_Vector_CompareDataFn *compareDataFn);
 
 /**
@@ -42,7 +42,7 @@ void ARC_Vector_Create(ARC_Vector **vector, ARC_Vector_CompareDataFn *compareDat
  * @note please make sure to clear and free the children before destroying an ARC_Vector
  *
  * @param[in] vector ARC_Vector to free
- */
+*/
 void ARC_Vector_Destroy(ARC_Vector *vector);
 
 /**
@@ -52,7 +52,7 @@ void ARC_Vector_Destroy(ARC_Vector *vector);
  *
  * @param[in] vector ARC_Vector to add to
  * @param[in] data   data that is being added
- */
+*/
 void ARC_Vector_Add(ARC_Vector *vector, void *data);
 
 /**
@@ -63,7 +63,7 @@ void ARC_Vector_Add(ARC_Vector *vector, void *data);
  *
  * @param[in] vector ARC_Vector to remove from
  * @param[in] data   matching data to remove
- */
+*/
 void ARC_Vector_Remove(ARC_Vector *vector, void *data);
 
 /**
@@ -73,7 +73,7 @@ void ARC_Vector_Remove(ARC_Vector *vector, void *data);
  *
  * @param[in] vector ARC_Vector to remove from
  * @param[in] index  position of data to remove
- */
+*/
 void ARC_Vector_RemoveIndex(ARC_Vector *vector, uint32_t index);
 
 /**
@@ -82,7 +82,7 @@ void ARC_Vector_RemoveIndex(ARC_Vector *vector, uint32_t index);
  * @param[in] vector ARC_Vector to get current size from
  *
  * @return the current size as a unsigned 32 bit integer
- */
+*/
 uint32_t ARC_Vector_GetSize(ARC_Vector *vector);
 
 /**
@@ -94,7 +94,7 @@ uint32_t ARC_Vector_GetSize(ARC_Vector *vector);
  * @param[in] index  position of data to get
  *
  * @return a void * item, or NULL on error
- */
+*/
 void *ARC_Vector_Get(ARC_Vector *vector, uint32_t index);
 
 #ifdef __cplusplus

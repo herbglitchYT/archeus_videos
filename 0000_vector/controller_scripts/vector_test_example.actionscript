@@ -10,7 +10,7 @@
 [Action  Type] #include <stdint.h>
 [Action Press] 29:1 28:1 28:0 29:0
 [Action Press] 29:1 28:1 28:0 29:0
-[Action  Type] ARC_TEST(AddATonOfThingsToVector){
+[Action  Type] ARC_TEST(Compare_Things){
 [Action Press] 29:1 28:1 28:0 29:0
 [Action  Type] int32_t coolVar = 24;
 [Action Press] 29:1 28:1 28:0 29:0

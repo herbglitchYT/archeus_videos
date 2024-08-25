@@ -2,7 +2,7 @@
 
 #include "arc/std/bool.h"
 #include "arc/std/errno.h"
-#include <stdio.h>
+#include <stdint.h>
 #include <stdlib.h>
 
 struct ARC_Vector {
@@ -60,12 +60,12 @@ void ARC_Vector_Add(ARC_Vector *vector, void *data){
         //increase the current capacity by double
         vector->currentCapacity <<= 1;
 
-        //if for some reason the capacity is 0, we should set it to one so we don't error on realloc
+        //if for some reason the capacity is 0, we should set it to one so we do not error on realloc
         if(vector->currentCapacity != 0){
             vector->currentCapacity++;
         }
 
-        //resize the vector's array and copy the contents at the same time
+        //resize the vectors array and copy the contents at the same time
         vector->data = (void **)realloc(vector->data, sizeof(void *) * vector->currentCapacity);
     }
 
@@ -95,7 +95,7 @@ void ARC_Vector_RemoveIndex(ARC_Vector *vector, uint32_t index){
         return;
     }
 
-    //we will be using index to iterate as we won't use it again, so we can skip the first part of the for loop
+    //we will be using index to iterate as we will not use it again, so we can skip the first part of the for loop
     for(; index + 1 < vector->currentSize; index++){
         //override the data from index to the end by shifting it back one
         vector->data[index] = vector->data[index + 1];
@@ -104,7 +104,7 @@ void ARC_Vector_RemoveIndex(ARC_Vector *vector, uint32_t index){
     //we have removed the item so we can decrease the current size
     vector->currentSize--;
 
-    //if the current size is half the current capacity or the current capacity is at the smallest limit, we don't need to do anything else
+    //if the current size is half the current capacity or the current capacity is at the smallest limit, we do not need to do anything else
     if(vector->currentSize != vector->currentCapacity >> 1 || vector->currentCapacity == 1){
         return;
     }
@@ -119,6 +119,7 @@ uint32_t ARC_Vector_GetSize(ARC_Vector *vector){
 }
 
 void *ARC_Vector_Get(ARC_Vector *vector, uint32_t index){
+    //check to make sure the given index is in bounds of the vector
     if(index >= vector->currentSize){
         arc_errno = ARC_ERRNO_DATA;
         ARC_DEBUG_LOG_ERROR_WITH_VARIABLES("ARC_Vector_Get(vector, %u), null value as the index was out of bounds", index);
@@ -127,3 +128,4 @@ void *ARC_Vector_Get(ARC_Vector *vector, uint32_t index){
 
     return vector->data[index];
 }
+
