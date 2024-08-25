@@ -1,13 +1,13 @@
 ┌───────────────────────────────────────────┐
 │             │                             │
-│ The Problem │     A Fix with a Vector     │
+│ The Problem │     A Fix With a Vector     │
 │             │                             │
 │ ┌────────┐  │  ┌────────┐     ┌─────────┐ │
-│ │ Hat    │  │  │ Hat    │────►│         │ │
-│ │ Pants  │  │  │ Pants  │────►│         │ │
-│ │ Jacket │  │  │ Jacket │────►│         │ │
-│ │ Shoes  │  │  │ Shoes  │────►│         │ │
-│ └────────┘  │  └────────┘┌───►│         │ │
+│ │ Hat    │  │  │ Hat    │────►│ Hat     │ │
+│ │ Pants  │  │  │ Pants  │────►│ Pants   │ │
+│ │ Jacket │  │  │ Jacket │────►│ Jacket  │ │
+│ │ Shoes  │  │  │ Shoes  │────►│ Shoes   │ │
+│ └────────┘  │  └────────┘┌───►│ Socks   │ │
 │     ▲       │    Socks───┘    │         │ │
 │     │       │                 │         │ │
 │   Socks     │                 │         │ │
