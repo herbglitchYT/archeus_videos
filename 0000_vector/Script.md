@@ -2,7 +2,7 @@
 My definition of a vector is a expandable array. For math vectors I use `vector2` and `vector3`. I'll be writing this in C, but the concepts should easily be transferred to any other language.
 
 # How does a vector work
-Lets say we have an array size four that holds clothing articles, because arrays are set size, we can't add to the array, so the fix in this example we will use is a vector. A vector will double the size of the array and copy the contents over, so that now socks can fit. We can use the same idea for downsizing the array, when removing from the array if we are less than half the space, we can free up that memory by creating an array half the size and copying the contents over.
+Lets say we have an array of size four that holds clothing articles and is filled, because arrays are set size, we can't socks to this already filled array. So the fix in this example we will use is a vector. A vector will double the size of the array and copy the contents over, and now the socks can fit. We can use the same idea for downsizing the array, when removing from the array if we are less than half the space, we can free up that memory by creating an array half the size and copying the contents over.
 
 # Description stuff
 In the description I have included a repository that holds, boilerplate for this project, the script I am reading, the finished project we will make, and all other related files.
@@ -12,10 +12,10 @@ You might notice I am on linux, I have also tested this code on windows with msy
 If you are watching this video when it comes out, I most likely won't have made a video for `ARC_Errno` and `ARC_Bool` yet. We will be using them both and they are part of the boilerplate. If you don't want to deal with the boilerplate, using a `printf` or whatever your language uses to output will work for what we use `ARC_Errno` for. And C has `stdbool.h`, which is pretty much all `ARC_Bool` is.
 
 # CMake
-Like with ARC_Errno and ARC_Bool, if you are watching when this video releases, I will not have gone over setting up cmake for a library. So for this I'd recommend either making a normal `CMakeLists.txt` which I have a video on and is linked in the description, or using the `CMakeLists.txt` provided in the boilerplate. If the cmake library video has come out, and you have seen it, I would recommend using that `CMakeLists.txt` and adding this to the library
+Like with ARC_Errno and ARC_Bool, if you are watching when this video releases, I will not have gone over setting up cmake for a library. So for this I'd recommend either making a normal `CMakeLists.txt` which I have a video on and is linked in the description, or using the `CMakeLists.txt` provided in the boilerplate. If the cmake library video has come out, and you have seen it, I would recommend using that `CMakeLists.txt` and adding this to the library.
 
 # Make
-If you don't like cmake, I have also included a "simple" boilerplate. Though if you use the simple boilerplate, do not include from "arc/std/" you should be able to include the headers directly as they are in the same folder, and for tests use "../src/" like the header that is already in the boilerplate.
+If you don't like cmake, I have also included a "simple" boilerplate. Though if you use the simple boilerplate, do not include from "arc/std/" you should be able to include the headers directly as they are in the same folder, and for tests use "../src/" like the header that is already included in the boilerplate.
 
 # Write the header boilerplate
 Headers to me are the best place for documentation. I try to document code as much as possible, though because this process takes a long time I'll speed up the footage of me writing the documentation when we get to it.
@@ -48,8 +48,8 @@ The first challenge is to write down functions you think a vector will need. You
 
 I'd recommend pausing the video and trying the challenge now
 
-# Write the header function
-For our basic implementation we will have a vector... A comparison call back... A creation function... A destruction function.. An add function... A remove function... A remove index function... A get size function... And a get function. And we'll go over these when we get to them in the c file
+# Write the header functions
+For our basic implementation we will have a vector type... A comparison call back... A creation function... A destruction function.. An add function... A remove function... A remove index function... A get size function... And a get function. And we'll go over these when we get to them in the c file
 ```c
 /**
  * @brief a dynamic array type
@@ -152,7 +152,7 @@ Now your next challenge is to fill that struct with what you think we will need.
 
 I'd recommend pausing the video and trying the challenge now.
 
-For what we will be using in this video for the basic type are four things. The first will be a `void **` or an array of unknown types, two `uint32_t`for storing the current size and what our current capacity will be, and lastly a callback for a compare data function
+For what we will be using in this video for the basic vector type are four things. The first will be a `void **` or an array of unknown types, two `uint32_t`for storing the current size and what our current capacity will be, and lastly a callback for a compare data function
 ```c
 #include "arc/std/bool.h"
 #include "arc/std/errno.h"
@@ -171,7 +171,7 @@ struct ARC_Vector {
 
 # Write the default compareDataFn
 The callback `CompareDataFn` is used when removing an item from the vector. This is handy if the vector holds a matching item that is in a different pointer from the one we check.
-Though for our default `compareDataFunction` we can just check to see if the pointers are the same, as we don't have more information for what the void pointers holds.
+Though for our default `compareDataFunction` we can just check to see if the pointers are the same, as we don't have any more information for what the void pointers holds.
 ```c
 //this is a private function used as the default check for removing data from a given pointer
 ARC_Bool ARC_Vector_CompareDataDefaultFn(void *dataA, void *dataB){
@@ -305,7 +305,7 @@ void ARC_Vector_RemoveIndex(ARC_Vector *vector, uint32_t index){
 ```
 
 # Write the remove function
-Most of the heavy lifting went into the remove index function. We will place The remove function in the c file above the remove index, just to match the header.
+Most of the heavy lifting went into the remove index function. We will place The remove function in the c file above the remove index function, just to match the header.
 
 the challenge is to see if you can write the remove function. a slight hint for if you have followed along with the code, remember there is a callback in the vector struct
 
@@ -333,7 +333,7 @@ For our last non bonus challenge, please try to write the get size and get funct
 
 I'd recommend pausing the video and trying the challenge now.
 
-For the get size function, we can just return the vector's current size. For the get function we should error check for out of bounds, and if it is, we can set the error to null and log that it is out of bounds, then return NULL. Otherwise we can return the data value at the index
+For the get size function, we can just return the vector's current size. For the get function we should error check for if it is out of bounds, and if it is, we can throw an error and log that it is out of bounds, then return NULL. Otherwise we can return the data value at the index
 
 ```c
 uint32_t ARC_Vector_GetSize(ARC_Vector *vector){
@@ -357,20 +357,22 @@ to make sure everything works and that we don't have any memory leaks, lets writ
 
 Lets open the `testing/std/vector.c` file and write some tests. I have never done testing like this before, but I believe it is an important part of making sure your code works like how you want it to. We won't write a ton of tests, and I'm sure we will miss some important tests. But for this video we are just doing some basic testing.
 
-We will be testing with 32 bit integers, and so we need to create a testing compare data function. All we have to do is de-reference the pointers as 32 bit ints, and check the values.
-
 For a bonus challenge, please try to think up some tests you could write.
 To test you define ARC_Test and give it a name that matches what you are testing like `Compare_Things` and add curly braces to the end.
 Then inside you can write code like normal, and to check output you can use `ARC_CHECK();` with a boolean expression on the inside.
-For our example we will have a `coolVar` that is 24, and a `chillVar` that is 420. We will test to see if they are not equal
+For our example we will have a `coolVar` that is 24, and a `chillVar` that is 420. We will test to see if they are not equal, which they are not
 ```c
 ARC_TEST(Compare_Things){
     int32_t coolVar = 24;
     int32_t chillVar = 420;
 
-    ARC_Test(coolVar != chillVar);
+    ARC_CHECK(coolVar != chillVar);
 }
 ```
+
+We will be testing with 32 bit integers, and so we need to create a testing compare data function. All we have to do is de-reference the pointers as 32 bit ints, and check the values.
+
+Now you should have everything needed to start the challenge.
 
 I'd recommend pausing the video and trying the bonus challenge now.
 
@@ -378,7 +380,7 @@ Alright, for the tests, first we can add, remove by index, and check that the ve
 
 Then we can do the same thing but with the regular remove, just remember to pass that callback into the vector creation function
 
-Next lastly we can check that the size is working
+Next we can check that the size is working.
 
 And lastly to check that an error is working we can try to get out of bounds.
 ```c
@@ -537,7 +539,7 @@ ARC_TEST(Vector_Add_RemoveIndex_Get_Try_Out_Of_Bounds){
 }
 ```
 
-We now can run the tests, make sure everything works as it should, and for those on linux and probably mac run valgrind to see if we have any memory leaks, sadly for windows I don't know if there is a tool to check memory leaks like valgrind. There should be an error output to a file within our tests folder. I'm not sure that it will have anything on windows, but on linux it should have an error output
+We now can run the tests, make sure everything works as it should, and for those on linux and probably mac run valgrind to see if we have any memory leaks, sadly for windows I don't know if there is a tool to check memory leaks like valgrind. There should be an error output to a file within our tests folder. I'm not sure that it will have anything on windows, but on linux it should have an error output when we went out of bounds.
 
 # Help and questions
 Thank you for watching this video, if you would like help or if there is something wrong with the video, please check the description for ways to contact me. youtube comments are not a good place to reach me.

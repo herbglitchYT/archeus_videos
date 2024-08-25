@@ -17,7 +17,7 @@
 [Action  Type] int32_t chillVar = 420;
 [Action Press] 29:1 28:1 28:0 29:0
 [Action Press] 29:1 28:1 28:0 29:0
-[Action  Type] ARC_Test(coolVar != chillVar);
+[Action  Type] ARC_CHECK(coolVar != chillVar);
 [Action Press] 29:1 28:1 28:0 29:0
 [Action  Type] }
 [Action Press] 29:1 28:1 28:0 29:0
