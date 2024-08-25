@@ -2,12 +2,11 @@
 My definition of a vector is a expandable array. For math vectors I use `vector2` and `vector3`. I'll be writing this in C, but the concepts should easily be transferred to any other language.
 
 # How does a vector work
-For the most basic implementation of a vector, and the implementation we will use, when we run out of space in an array, we will create a new array of double the size and copy the old arrays contents into the new array.
-We can use the same idea for downsizing the array.
+Lets say we have an array size four that holds clothing articles, because arrays are set size, we can't add to the array, so the fix in this example we will use is a vector. A vector will double the size of the array and copy the contents over, so that now socks can fit. We can use the same idea for downsizing the array, when removing from the array if we are less than half the space, we can free up that memory by creating an array half the size and copying the contents over.
 
 # Description stuff
 In the description I have included a repository that holds, boilerplate for this project, the script I am reading, the finished project we will make, and all other related files.
-You might notice I am on linux, I have also tested this code on windows with msys2 using their ucrt MinGW and had no issues with it. If you do have any issues, please let me know.
+You might notice I am on linux, I have also tested this code on windows with msys2 using their ucrt MinGW and had no issues with it. If you do have any issues, please let me know, my contact information is in the description.
 
 # ARC_Errno and ARC_Bool
 If you are watching this video when it comes out, I most likely won't have made a video for `ARC_Errno` and `ARC_Bool` yet. We will be using them both and they are part of the boilerplate. If you don't want to deal with the boilerplate, using a `printf` or whatever your language uses to output will work for what we use `ARC_Errno` for. And C has `stdbool.h`, which is pretty much all `ARC_Bool` is.
@@ -16,7 +15,7 @@ If you are watching this video when it comes out, I most likely won't have made 
 Like with ARC_Errno and ARC_Bool, if you are watching when this video releases, I will not have gone over setting up cmake for a library. So for this I'd recommend either making a normal `CMakeLists.txt` which I have a video on and is linked in the description, or using the `CMakeLists.txt` provided in the boilerplate. If the cmake library video has come out, and you have seen it, I would recommend using that `CMakeLists.txt` and adding this to the library
 
 # Make
-If you don't like cmake, I have also included a "simple" boilerplate. Though if you use the simple boilerplate, do not include from "arc/std/", I'll let you know the changes when we get there.
+If you don't like cmake, I have also included a "simple" boilerplate. Though if you use the simple boilerplate, do not include from "arc/std/" you should be able to include the headers directly as they are in the same folder, and for tests use "../src/" like the header that is already in the boilerplate.
 
 # Write the header boilerplate
 Headers to me are the best place for documentation. I try to document code as much as possible, though because this process takes a long time I'll speed up the footage of me writing the documentation when we get to it.
@@ -50,7 +49,7 @@ The first challenge is to write down functions you think a vector will need. You
 I'd recommend pausing the video and trying the challenge now
 
 # Write the header function
-For our basic implementation we will have
+For our basic implementation we will have a vector... A comparison call back... A creation function... A destruction function.. An add function... A remove function... A remove index function... A get size function... And a get function. And we'll go over these when we get to them in the c file
 ```c
 /**
  * @brief a dynamic array type
@@ -360,12 +359,13 @@ Lets open the `testing/std/vector.c` file and write some tests. I have never don
 
 We will be testing with 32 bit integers, and so we need to create a testing compare data function. All we have to do is de-reference the pointers as 32 bit ints, and check the values.
 
-for a bonus challenge, please try to think up some tests you could write.
-To test you define ARC_Test and give it a name that matches what you are testing like `AddATonOfThingsToVector` and add curly braces to the end.
-then inside you can write code like normal, and to check output you can use `ARC_CHECK();` with a boolean expresson on the inside
+For a bonus challenge, please try to think up some tests you could write.
+To test you define ARC_Test and give it a name that matches what you are testing like `Compare_Things` and add curly braces to the end.
+Then inside you can write code like normal, and to check output you can use `ARC_CHECK();` with a boolean expression on the inside.
+For our example we will have a `coolVar` that is 24, and a `chillVar` that is 420. We will test to see if they are not equal
 ```c
-ARC_TEST(AddATonOfThingsToVector){
-    int32_t coolVar = 69;
+ARC_TEST(Compare_Things){
+    int32_t coolVar = 24;
     int32_t chillVar = 420;
 
     ARC_Test(coolVar != chillVar);
@@ -374,14 +374,17 @@ ARC_TEST(AddATonOfThingsToVector){
 
 I'd recommend pausing the video and trying the bonus challenge now.
 
-Alright, for the tests, first we can add remove by index and check that the vector is holding the correct values, I'll be using refrences instead of creating pointers just to keep things simple
+Alright, for the tests, first we can add, remove by index, and check that the vector is holding the correct values, I'll be using references instead of creating pointers just to keep things simple
 
 Then we can do the same thing but with the regular remove, just remember to pass that callback into the vector creation function
 
-And lastly we can check that the size is working
+Next lastly we can check that the size is working
+
+And lastly to check that an error is working we can try to get out of bounds.
 ```c
 #include "../test.h"
 #include "arc/std/bool.h"
+#include "arc/std/errno.h"
 #include "arc/std/vector.h"
 #include <stdint.h>
 
@@ -393,7 +396,7 @@ ARC_Bool TEST_Vector_CompareDataFn(void *dataA, void *dataB){
     return ARC_False;
 }
 
-ARC_TEST(AddRemoveByIndexAndCheckValuesInVector){
+ARC_TEST(Vector_Add_RemoveIndex_Get){
     ARC_Vector *vector;
     ARC_Vector_Create(&vector, NULL);
 
@@ -437,7 +440,7 @@ ARC_TEST(AddRemoveByIndexAndCheckValuesInVector){
     ARC_Vector_Destroy(vector);
 }
 
-ARC_TEST(AddRemoveAndCheckValuesInVector){
+ARC_TEST(Vector_Add_Remove_Get){
     ARC_Vector *vector;
     ARC_Vector_CompareDataFn testCompareDataFn = TEST_Vector_CompareDataFn;
     ARC_Vector_Create(&vector, &testCompareDataFn);
@@ -482,7 +485,7 @@ ARC_TEST(AddRemoveAndCheckValuesInVector){
     ARC_Vector_Destroy(vector);
 }
 
-ARC_TEST(AddAndCheckSizeInVector){
+ARC_TEST(Vector_Add_RemoveIndex_GetSize){
     ARC_Vector *vector;
     ARC_Vector_Create(&vector, NULL);
 
@@ -517,9 +520,24 @@ ARC_TEST(AddAndCheckSizeInVector){
 
     ARC_Vector_Destroy(vector);
 }
+
+ARC_TEST(Vector_Add_RemoveIndex_Get_Try_Out_Of_Bounds){
+    ARC_Vector *vector;
+    ARC_Vector_Create(&vector, NULL);
+
+    int32_t val0 = 0;
+
+    ARC_Vector_Add(vector, &val0);
+    ARC_CHECK(NULL == ARC_Vector_Get(vector, 1));
+    arc_errno = 0;
+
+    ARC_Vector_RemoveIndex(vector, 0);
+
+    ARC_Vector_Destroy(vector);
+}
 ```
 
-We now can run the tests, make sure everything works as it should, and for those on linux and probably mac run valgrind to see if we have any memory leaks, sadly for windows I don't know if there is a tool to check memory leaks like valgrind.
+We now can run the tests, make sure everything works as it should, and for those on linux and probably mac run valgrind to see if we have any memory leaks, sadly for windows I don't know if there is a tool to check memory leaks like valgrind. There should be an error output to a file within our tests folder. I'm not sure that it will have anything on windows, but on linux it should have an error output
 
 # Help and questions
 Thank you for watching this video, if you would like help or if there is something wrong with the video, please check the description for ways to contact me. youtube comments are not a good place to reach me.
